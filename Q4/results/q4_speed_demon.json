@@ -1,0 +1,9 @@
+{
+  "n_words": 1000,
+  "full_pipeline_seconds": 236.02759980002884,
+  "full_pipeline_avg_ms": 236.02759980002884,
+  "grammar_only_seconds": 0.003071900107897818,
+  "grammar_only_avg_ms_per_word": 0.003071900107897818,
+  "added_segmentation_spelling_seconds": 236.02452789992094,
+  "added_segmentation_spelling_avg_ms": 236.02452789992094
+}

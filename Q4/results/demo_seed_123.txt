@@ -1,0 +1,15 @@
+
+=== Q4 LIVE DEMO ===
+[SEGMENT-ALERT] 'heturned' split as he/PRON | turned/VERB (380.16 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: me->he (3.21 ms)
+[SEGMENT-ALERT] 'onhis' split as on/ADP | his/DET (186.62 ms)
+
+=== FINAL ANALYSIS ===
+                                                 sentence pcfg_result  pcfg_logprob  bigram_logprob  trigram_logprob chosen_method                   verdict  segmentation_merges  spelling_corrections
+                                 he turned to his platoon      PARSED    -75.861221      -34.401745       -51.934497          PCFG        LIKELY-GRAMMATICAL                    1                     0
+                                         okay men he said      PARSED    -73.502528      -28.623610       -54.122855          PCFG        LIKELY-GRAMMATICAL                    0                     0
+                                                follow he UNPARSEABLE           NaN      -26.147880       -34.805573       TRIGRAM POTENTIALLY-UNGRAMMATICAL                    0                     1
+goulding leaped to his feet and started forward garryowen      PARSED   -166.847281      -70.226172       -92.224550          PCFG        LIKELY-GRAMMATICAL                    0                     0
+                            on his lips his men following      PARSED   -102.857812      -43.516239       -68.139754          PCFG        LIKELY-GRAMMATICAL                    1                     0
+
+Live averages: {'token_avg_ms': 23.628829168349814, 'grammar_trigger_avg_ms': 3.1284000142477453, 'tokens': 26, 'segmentation_merges': 2, 'spelling_corrections': 0, 'grammar_triggers': 2}

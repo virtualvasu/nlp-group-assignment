@@ -1,0 +1,8 @@
+n_words                                1000.000000
+full_pipeline_seconds                   236.027600
+full_pipeline_avg_ms                    236.027600
+grammar_only_seconds                      0.003072
+grammar_only_avg_ms_per_word              0.003072
+added_segmentation_spelling_seconds     236.024528
+added_segmentation_spelling_avg_ms      236.024528
+dtype: float64

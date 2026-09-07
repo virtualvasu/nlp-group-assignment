@@ -1,0 +1,26 @@
+
+=== Q4 LIVE DEMO ===
+[SEGMENT-ALERT] 'canget' split as can/VERB | get/VERB (288.16 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: at->it (2.49 ms)
+[SEGMENT-ALERT] 'thedrop' split as the/DET | drop/NOUN (283.39 ms)
+[SEGMENT-ALERT] 'beerstein' split as beer/VERB | stein/NOUN (428.19 ms)
+[SEGMENT-ALERT] 'everybodyhas' split as everybody/ADV | has/VERB (625.25 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: on->of (3.76 ms)
+[SEGMENT-ALERT] 'moralsof' split as morals/NOUN | of/ADP (440.48 ms)
+[SEGMENT-ALERT] 'playthe' split as play/VERB | the/DET (337.57 ms)
+[SEGMENT-ALERT] 'roomhere' split as room/NOUN | here/ADV (372.09 ms)
+[SEGMENT-ALERT] 'cancome' split as can/VERB | come/VERB (313.98 ms)
+[SEGMENT-ALERT] 'headlinefrom' split as headline/NOUN | from/ADP (509.23 ms)
+[SEGMENT-ALERT] 'thispair' split as this/DET | pair/NOUN (390.67 ms)
+[SEGMENT-ALERT] 'willmake' split as will/VERB | make/VERB (338.76 ms)
+[SEGMENT-ALERT] 'oneof' split as one/NUM | of/ADP (209.87 ms)
+
+=== FINAL ANALYSIS ===
+                                                                                                             sentence pcfg_result  pcfg_logprob  bigram_logprob  trigram_logprob chosen_method            verdict  segmentation_merges  spelling_corrections
+       you can get into an argument about fallout shelters it the drop of a beer stein in clubs and pubs these nights      PARSED   -240.690636     -164.007639      -232.806373          PCFG LIKELY-GRAMMATICAL                    3                     1
+                        everybody has a different idea of the ethics and morals of driving away neighbors when and if      PARSED   -217.887203     -128.691791      -188.306107          PCFG LIKELY-GRAMMATICAL                    2                     1
+    comic gary morton signed to play the living room here because the only time his heart lucille ball can come along      PARSED   -311.662951     -154.031595      -219.087976          PCFG LIKELY-GRAMMATICAL                    3                     0
+                                                                 and watch for a headline from this pair any time now      PARSED   -101.784619      -78.178090      -102.940666          PCFG LIKELY-GRAMMATICAL                    2                     0
+the living room has another scoop jane russell will make one of her rare night club singing appearances there opening      PARSED   -319.531908     -147.089148      -191.594274          PCFG LIKELY-GRAMMATICAL                    2                     0
+
+Live averages: {'token_avg_ms': 57.45150127059108, 'grammar_trigger_avg_ms': 2.808412493322976, 'tokens': 91, 'segmentation_merges': 12, 'spelling_corrections': 0, 'grammar_triggers': 8}
