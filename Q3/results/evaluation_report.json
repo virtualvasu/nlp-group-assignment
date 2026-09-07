@@ -1,0 +1,14 @@
+{
+  "nonword_accuracy": 0.8386355602686462,
+  "nonword_correct": 4745,
+  "nonword_total": 5658,
+  "realword_accuracy": 0.6728286384976526,
+  "realword_correct": 2293,
+  "realword_total": 3408,
+  "speed_demon": {
+    "n_words": 1000,
+    "method_a_seconds": 0.11266674999933457,
+    "method_b_seconds": 0.019388603999686893,
+    "speedup_factor": 5.810977933282563
+  }
+}

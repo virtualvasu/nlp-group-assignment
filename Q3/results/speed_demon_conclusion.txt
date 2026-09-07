@@ -1,0 +1,22 @@
+Speed Demon Benchmark conclusion
+---------------------------------
+Method A (brute-force edit distance 1) generates every possible string
+reachable by one delete, transpose, replace, or insert. For a word of
+length n over a 26-letter alphabet that is roughly (26n + 25) candidate
+strings, and EVERY one of them is then checked for vocabulary membership.
+The cost is dominated by that O(26n) string construction + hashing, per
+word.
+
+Method B (Symmetric Delete) only ever performs n *deletions* of the query
+word (no insertions/replacements at query time) and looks each of those
+n+1 short strings up directly in a pre-built hash map. Its per-query cost
+is O(n) string construction + O(n) hash lookups -- no factor of 26 -- with
+all the combinatorial work of relating deletions back to full words paid
+ONCE, offline, while building the dictionary.
+
+On this run, 1000 misspelled words took 0.1127s with
+Method A and 0.0194s with Method B, i.e. Method B was
+~5.8x faster. This matches the theoretical expectation:
+removing the factor-of-26 alphabet loop from the per-query hot path is
+exactly why Method B scales so much better, at the one-time cost of
+building a larger pre-processing dictionary.
