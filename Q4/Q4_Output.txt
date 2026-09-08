@@ -1,0 +1,75 @@
+Seed 42:
+=== Q4 LIVE DEMO ===
+[SEGMENT-ALERT] 'couldnot' split as could/VERB | not/ADV (342.75 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: emma->lemma, am->af (2.11 ms)
+[SEGMENT-ALERT] 'willbe' split as will/VERB | be/VERB (276.02 ms)
+[SEGMENT-ALERT] 'limitedas' split as limited/VERB | as/ADP (354.97 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: bea->be, difficulty->difficult, as->af (1.97 ms)
+[SEGMENT-ALERT] 'atonce' split as at/ADP | once/ADV (292.20 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: deceived->received (3.13 ms)
+[SEGMENT-ALERT] 'hermanner' split as her/DET | manner/NOUN (392.25 ms)
+[SEGMENT-ALERT] 'didnot' split as did/VERB | not/ADV (221.83 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: mock->rock, catch->watch (3.18 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: her->he, on->of (3.08 ms)
+[SEGMENT-ALERT] 'angerthough' split as anger/ADV | though/ADP (369.93 ms)
+[SEGMENT-ALERT] 'shewed' split as she/PRON | wed/VERB (328.68 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: though->through (3.26 ms)
+
+=== FINAL ANALYSIS ===
+                                                                                                                                                                                     sentence pcfg_result  pcfg_logprob  bigram_logprob  trigram_logprob chosen_method                   verdict  segmentation_merges  spelling_corrections
+                                                                                                                                                                       lemma could not resist      PARSED    -67.571653      -42.541154       -54.102515          PCFG        LIKELY-GRAMMATICAL                    1                     1
+                                                                                                                                                                                           ah UNPARSEABLE           NaN      -16.818304       -23.973234       TRIGRAM POTENTIALLY-UNGRAMMATICAL                    0                     0
+                                                                                                                                                             ma af but there may be difficult UNPARSEABLE           NaN      -52.441261       -84.789246       TRIGRAM POTENTIALLY-UNGRAMMATICAL                    0                     3
+                                                                                                                            pardon me but you will be limited af to number only three at once      PARSED   -211.843004     -102.943547      -158.403700          PCFG        LIKELY-GRAMMATICAL                    3                     1
+miss bates received by the rock ceremony of her manner did not immediately watch he meaning but when it burst of her it could not anger through a slight blush she wed that it could pain her      PARSED   -487.729922     -297.492240      -402.981402          PCFG        LIKELY-GRAMMATICAL                    4                     6
+
+Live averages: {'token_avg_ms': 46.89774726602164, 'grammar_trigger_avg_ms': 2.787316644874712, 'total_processing_ms': 2596.0999995004386, 'tokens': 63, 'segmentation_merges': 8, 'spelling_corrections': 0, 'grammar_triggers': 6}
+
+Seed 123:
+(.venv) PS C:\Users\Siddharth\OneDrive\Desktop\nlp-group-assignment\Q4_patch> python main.py demo --seed 123 --no-benchmark
+
+=== Q4 LIVE DEMO ===
+[SEGMENT-ALERT] 'youtalk' split as you/PRON | talk/VERB (358.00 ms)
+[SEGMENT-ALERT] 'whisperedturnbull' split as whispered/VERB | turn/NOUN | bull/NOUN(914.22 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: bull->ball (4.52 ms)
+[SEGMENT-ALERT] 'thewall' split as the/DET | wall/NOUN (332.80 ms)
+[SEGMENT-ALERT] 'macian' split as ma/DET | c/. | i/. | an/DET (264.54 ms)
+[SEGMENT-ALERT] 'thecabman' split as the/DET | cab/NOUN | man/NOUN (479.78 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: ma->a, i->is, an->as, cab->car (1.74 ms)
+[SEGMENT-ALERT] 'scotchdrawl' split as s/. | c/. | o/. | t/. | c/. | h/. | drawl/NOUN (500.81 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: o->of, t->a, drawl->draw (2.08 ms)
+[SEGMENT-ALERT] 'st' split as s/. | t/. (36.27 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: us->is, s->a, t->it (3.56 ms)
+[SEGMENT-ALERT] 'pancras' split as pan/VERB | c/. | r/. | as/ADP (234.77 ms)
+[SEGMENT-ALERT] 'verra' split as v/. | err/NOUN | a/DET (139.90 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: pan->an, r->or, as->a (1.85 ms)
+[SEGMENT-ALERT] 'cabman' split as cab/NOUN | man/NOUN (264.50 ms)
+[SEGMENT-ALERT] 'dlike' split as d/. | like/ADP (186.48 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: cab->car, d->do (1.57 ms)
+[SEGMENT-ALERT] 'arst' split as a/DET | r/. | s/. | t/. (91.51 ms)
+[SEGMENT-ALERT] 'asecond' split as a/DET | second/ADJ (259.07 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: s->a, t->to (2.23 ms)
+[SEGMENT-ALERT] 'macianheard' split as ma/DET | c/. | i/. | an/DET | heard/NOUN (423.04 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: i->is (1.27 ms)
+[GRAMMAR-ALERT] Real-word context candidates detected: on->in (2.07 ms)
+[SEGMENT-ALERT] 'getover' split as get/VERB | over/PRT (241.64 ms)
+
+=== FINAL ANALYSIS ===
+                                                               sentence pcfg_result pcfg_logprob  bigram_logprob  trigram_logprob chosen_method            verdict  segmentation_merges  spelling_corrections
+                                                                  you talk to him aminute whispered turn ball and stepped back into the shadow of the wall      PARSED  -184.849924     -122.613490      -178.809218          PCFG LIKELY-GRAMMATICAL               3                     1
+we want you said a c is as to the car man with a superb s c of a c h draw of indifference and assurance to drive is to a it an c or a station v err a quick      PARSED  -484.223880     -316.880563      -434.501224          PCFG LIKELY-GRAMMATICAL               6                    13
+ very sorry sir said the car man but i do like to know it was all right      PARSED  -232.972965     -115.887696      -177.299774          PCFG LIKELY-GRAMMATICAL               2                     2
+                               might i a r a to where you come from sir      PARSED  -202.505878      -99.200096      -129.912323          PCFG LIKELY-GRAMMATICAL               1                     2
+                a second after he spoke ma c is an heard a heavy voice in the otherside of the wall saying i suppose i d better get over and look for them      PARSED  -351.381940     -221.452713      -321.660615          PCFG LIKELY-GRAMMATICAL               3                     2
+
+Live averages: {'token_avg_ms': 54.350317243069156, 'grammar_trigger_avg_ms': 2.3659300175495446, 'total_processing_ms': 4752.136900322512, 'tokens': 119, 'segmentation_merges': 15, 'spelling_corrections': 0, 'grammar_triggers': 10}
+Benchmark:
+(.venv) PS C:\Users\Siddharth\OneDrive\Desktop\nlp-group-assignment\Q4_patch> python main.py benchmark
+n_words                                1000.000000
+full_pipeline_seconds                   363.785966
+full_pipeline_avg_ms                    363.785966
+grammar_only_seconds                      0.004083
+grammar_only_avg_ms_per_word              0.004083
+added_segmentation_spelling_seconds     363.781883
+added_segmentation_spelling_avg_ms      363.781883
+dtype: float64

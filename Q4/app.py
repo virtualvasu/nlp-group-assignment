@@ -67,27 +67,36 @@ def sentence_groups_from_history(text, pipe):
     if not history:
         return [], {}, {}
 
-    groups = []
-    merge_counts = {}
-    spell_counts = {}
+    # First determine the final-token span contributed by each raw token. A Q1
+    # merge changes token count, but a Q3 real-word correction is one-for-one.
+    raw_groups = []
     cursor = 0
     for si, line in enumerate(lines):
         raw_count = len(line.split())
-        segment = history[cursor:cursor + raw_count]
+        raw_groups.append(history[cursor:cursor + raw_count])
         cursor += raw_count
-        groups.append([word for item in segment for word in item.final_tokens])
-        merge_counts[si] = sum(int(item.segmentation_merge) for item in segment)
-        spell_counts[si] = sum(1 for item in segment for alert in item.alerts if alert.kind == 'SPELL-ALERT')
-
     if cursor < len(history):
-        segment = history[cursor:]
-        si = len(groups)
-        groups.append([word for item in segment for word in item.final_tokens])
-        merge_counts[si] = sum(int(item.segmentation_merge) for item in segment)
-        spell_counts[si] = sum(1 for item in segment for alert in item.alerts if alert.kind == 'SPELL-ALERT')
+        raw_groups.append(history[cursor:])
 
-    # Trigger-level real-word fixes are corrections to already-finalized tokens.
-    # Attribute them to the sentence whose final-token span contains the change.
+    groups = []
+    merge_counts = {}
+    spell_counts = {}
+    final_cursor = 0
+    for si, segment in enumerate(raw_groups):
+        count = sum(len(item.final_tokens) for item in segment)
+        # IMPORTANT: read from pipe.tokens, not item.final_tokens. Trigger-level
+        # real-word correction mutates the shared final stream after a token has
+        # already been recorded in history.
+        groups.append(pipe.tokens[final_cursor:final_cursor + count])
+        final_cursor += count
+        merge_counts[si] = sum(int(item.segmentation_merge) for item in segment)
+        spell_counts[si] = sum(
+            1 for item in segment
+            for alert in item.alerts if alert.kind == 'SPELL-ALERT'
+        )
+
+    # Trigger-level real-word fixes are already reflected in pipe.tokens. Count
+    # them for the sentence containing the corrected absolute token.
     cumulative = []
     total = 0
     for group in groups:
@@ -228,6 +237,7 @@ else:
     else:
         st.caption('No alerts yet. Keep typing; segmentation/spelling runs per completed token and grammar runs every N words.')
 
+    st.caption(f"Grammar triggers executed: {len(st.session_state.live_pipe.trigger_latencies)}")
     st.subheader('Live latency')
     st.json(st.session_state.live_pipe.averages())
 

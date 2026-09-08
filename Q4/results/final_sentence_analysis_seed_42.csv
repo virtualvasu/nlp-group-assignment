@@ -1,6 +1,6 @@
 sentence,pcfg_result,pcfg_logprob,bigram_logprob,trigram_logprob,chosen_method,verdict,segmentation_merges,spelling_corrections
-you can get into an argument about fallout shelters it the drop of a beer stein in clubs and pubs these nights,PARSED,-240.6906362754223,-164.00763861338166,-232.8063725835661,PCFG,LIKELY-GRAMMATICAL,3,1
-everybody has a different idea of the ethics and morals of driving away neighbors when and if,PARSED,-217.88720256802912,-128.69179070805842,-188.3061065676683,PCFG,LIKELY-GRAMMATICAL,2,1
-comic gary morton signed to play the living room here because the only time his heart lucille ball can come along,PARSED,-311.6629510888581,-154.03159524372265,-219.0879763350904,PCFG,LIKELY-GRAMMATICAL,3,0
-and watch for a headline from this pair any time now,PARSED,-101.78461886020028,-78.17809013869876,-102.94066622977954,PCFG,LIKELY-GRAMMATICAL,2,0
-the living room has another scoop jane russell will make one of her rare night club singing appearances there opening,PARSED,-319.53190809766465,-147.08914811891046,-191.594273671881,PCFG,LIKELY-GRAMMATICAL,2,0
+lemma could not resist,PARSED,-67.57165302079355,-42.54115427196545,-54.102515250694616,PCFG,LIKELY-GRAMMATICAL,1,1
+ah,UNPARSEABLE,,-16.81830386233467,-23.973233675038728,TRIGRAM,POTENTIALLY-UNGRAMMATICAL,0,0
+ma af but there may be difficult,UNPARSEABLE,,-52.441261195080635,-84.78924556824019,TRIGRAM,POTENTIALLY-UNGRAMMATICAL,0,3
+pardon me but you will be limited af to number only three at once,PARSED,-211.84300381174018,-102.94354725910318,-158.40369964854276,PCFG,LIKELY-GRAMMATICAL,3,1
+miss bates received by the rock ceremony of her manner did not immediately watch he meaning but when it burst of her it could not anger through a slight blush she wed that it could pain her,PARSED,-487.72992202771337,-297.49224045415326,-402.98140151496233,PCFG,LIKELY-GRAMMATICAL,4,6

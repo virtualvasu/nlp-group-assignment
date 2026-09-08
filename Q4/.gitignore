@@ -4,4 +4,3 @@ __pycache__/
 .env
 artifacts/*.pkl
 artifacts/*.json
-artifacts/**/*.pkl

@@ -33,7 +33,7 @@ def demo(seed=None, include_benchmark=True):
         for tok,was_merge in stream:
             item=pipe.process_token(tok)
             m += int(item.segmentation_merge)
-            s += int(item.spelling_correction is not None)
+            s += sum(1 for a in item.alerts if a.kind == 'SPELL-ALERT')
             for a in item.alerts:
                 print(f'[{a.kind}] {a.message} ({a.latency_ms:.2f} ms)')
             if cfg.sleep_seconds:

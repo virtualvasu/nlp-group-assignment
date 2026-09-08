@@ -21,9 +21,13 @@ def run_q4_benchmark(q1_decoder,q3_corrector,shared_lm,config,n=1000,seed=7):
     # Full live layer: segmentation check + spelling check, with no grammar trigger
     # to isolate the added per-token cost.
     import dataclasses
-    cfg=dataclasses.replace(config,grammar_trigger_words=n+1)
+    # Grammar is intentionally unreachable in this benchmark. A Q1 merge can expand
+    # one input token into multiple output tokens, so n+1 is not safe.
+    cfg=dataclasses.replace(config,grammar_trigger_words=10**9)
     pipe=LiveEditorPipeline(q1_decoder,q3_corrector,shared_lm,cfg)
     t0=time.perf_counter();pipe.process_tokens(batch);full=time.perf_counter()-t0
+    if pipe.trigger_latencies:
+        raise AssertionError('Grammar trigger fired during the segmentation/spelling isolation benchmark.')
     # Grammar-only benchmark on the exact same 1000-token batch, using one trigger
     # call to avoid repeated trigger scheduling overhead.
     t1=time.perf_counter();

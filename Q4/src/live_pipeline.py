@@ -139,9 +139,12 @@ class LiveEditorPipeline:
         return [self.process_token(t) for t in tokens]
 
     def averages(self):
+        token_total_ms = sum(self.token_latencies)
+        grammar_total_ms = sum(self.trigger_latencies)
         return {
-            'token_avg_ms': sum(self.token_latencies) / len(self.token_latencies) if self.token_latencies else 0.0,
-            'grammar_trigger_avg_ms': sum(self.trigger_latencies) / len(self.trigger_latencies) if self.trigger_latencies else 0.0,
+            'token_avg_ms': token_total_ms / len(self.token_latencies) if self.token_latencies else 0.0,
+            'grammar_trigger_avg_ms': grammar_total_ms / len(self.trigger_latencies) if self.trigger_latencies else 0.0,
+            'total_processing_ms': token_total_ms + grammar_total_ms,
             'tokens': len(self.tokens),
             'segmentation_merges': self.segmentation_merges,
             'spelling_corrections': self.spelling_corrections,
